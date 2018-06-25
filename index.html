@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="pt-br"><head>
+   <meta charset="UTF-8"><title>Calculadora Javascript</title>
+</head>
+<body>
+<br>
+<center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<table style="text-align: left; width: 855px; height: 165px; background-color: white;" border="3" cellpadding="7" cellspacing="8">
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">Capital Inicial<br>
+      </td>
+      <td style="vertical-align: top;"><input id="id1" name="capital" size="" 10="" maxlength="10" autocomplete="off" type="text"></td>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Taxa Mensal<br>
+      </td>
+      <td style="vertical-align: top;"><input id="id2" name="taxa" size="" 10="" maxlength="10" autocomplete="off" type="text"></td>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Nº Meses<br>
+      </td>
+      <td style="vertical-align: top;"><input id="id3" name="meses" size="" 10="" maxlength="10" autocomplete="off" type="text"></td>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><input size="" 50="" maxlength="50" name="" value="Calcular" onclick="calcular()" type="button"></td>
+      <td colspan="2" rowspan="1" style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Resultado<br>
+      </td>
+      <td colspan="2" rowspan="1"  style="vertical-align: top;"><span id="id4"></span><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Rendimento<br>
+      </td>
+      <td colspan="2" maxlength="10" rowspan="1" style="vertical-align: top;"><span id="id5" maxlength="10" ></span><br>
+      </td>
+    </tr>
+     <tr>
+      <td style="vertical-align: top;">Rendimento em Juros<br>
+      </td>
+      <td colspan="2" rowspan="1" style="vertical-align: top;"><span id="id6"></span><br>
+      </td>
+    </tr>
+    <tr>
+  </tbody>
+</table>
+</center>
+<span style="font-weight: bold;"></span><span style="font-weight: bold;"></span><span style="font-weight: bold;"><br>
+</span>
+<script>
+            function calcular(){
+            var x = parseFloat(document.getElementById("id1").value);
+            var y = parseFloat(document.getElementById("id2").value);
+            var z = parseFloat(document.getElementById("id3").value);
+            var res = x*Math.pow(((y/100)+1),z);
+            var res2 = "R$ " + res.toFixed(2).replace(".",",");
+            var rend = res-x;
+            var rendjuros = (rend/x)*100;
+            document.getElementById("id4").innerHTML=res2;
+            document.getElementById("id5").innerHTML=rend;
+            document.getElementById("id6").innerHTML=rendjuros;
+        }
+        </script>
+		<span style="font-weight: bold;"></span><span style="font-weight: bold;">
+		</span>
+		<span style="font-weight: bold;"><br>
+		</span>
+		<span style="font-weight: bold;">
+		</span>
+
+
+</body>
+</html>
